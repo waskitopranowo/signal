@@ -1,0 +1,24 @@
+import numpy as np
+import matplotlib.pyplot as plt
+from deconvolution import spec_div_decon
+
+S = np.loadtxt('data_wno.txt')
+dt = 2  # sampling rate in ms
+t = np.arange(0, len(S), 1)*dt  # time in ms
+
+Sdecon, f, Ophalf = spec_div_decon(S, dt, np.asarray([0, 2, 50, 55]), 25, 0.1)
+
+plt.figure(1)
+plt.plot(f, Ophalf)
+plt.xlabel('Frequency [Hz]')
+plt.title('Deconvolution Operator Spectrum')
+
+plt.figure(2)
+plt.subplot(2, 1, 1)
+plt.plot(t, S)
+plt.title('Before Deconvolution')
+plt.subplot(2, 1, 2)
+plt.plot(t, Sdecon)
+plt.xlabel('Time [ms]')
+plt.title('After Deconvolution')
+plt.show()
