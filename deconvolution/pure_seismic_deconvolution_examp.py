@@ -1,6 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
-from pure_decon import pure_decon
+from deconvolution import pure_decon
 
 S = np.loadtxt('data_wno.txt')  # seismic trace
 dt = 2  # sampling rate in millisecond
