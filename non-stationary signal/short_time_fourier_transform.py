@@ -1,3 +1,4 @@
+# coded by waskito pranowo, universitas pertamina
 import numpy as np
 import matplotlib.pyplot as plt
 
