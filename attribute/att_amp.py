@@ -1,7 +1,12 @@
+# coded by waskito pranowo, universitas pertamina
 import numpy as np
 
 
 def att_amp(traces, window, method):
+    # traces is 2D seismic data
+    # window is width of window in number of samples
+    # method, the attribute methods: average, absolute average, and RMS
+    
     if len(traces.shape) == 1:
         traces = np.asarray([traces]).T
 
