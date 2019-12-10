@@ -8,8 +8,9 @@ dt = 1
 time = data[np.arange(0, data.shape[0], dt), 0]
 sig = data[np.arange(0, data.shape[0], dt), 1]
 
-window = 101  # gabor transform window in samples
+windowms = 101  # gabor transform window in samples
 
+window = int(np.round(windowms/dt))
 zpad = int(np.floor(window/2))  # number of zero padding
 sigzpad = np.hstack((np.zeros(zpad), sig, np.zeros(zpad)))
 
